@@ -1,0 +1,23 @@
+#include <algorithm>
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <cstring>
+#include <string>
+#include <vector>
+#include <cstdio>
+#include <stack>    
+#include <queue>
+#include <deque>
+#include <ctime>
+#include <cmath>
+
+#define fi first
+#define se second
+#define pb push_back
+#define debug(x) cout << x << ' ';
+#define debun(x) cout << x << '\n';
+
+using namespace std;
+typedef pair<int,int> ii;
+typedef long long ll;
