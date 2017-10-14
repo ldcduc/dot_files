@@ -19,5 +19,7 @@
 #define debun(x) cout << x << '\n';
 
 using namespace std;
+int minimize(int &a,int b) {if (b < a) a = b; else return false; return true;}
+int maximize(int &a,int b) {if (b > a) a = b; else return false; return true;}
 typedef pair<int,int> ii;
 typedef long long ll;

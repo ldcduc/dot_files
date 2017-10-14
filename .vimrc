@@ -66,16 +66,22 @@ silent !stty -ixon
 
 " Restore default behavior when leaving Vim
 autocmd VimLeave * silent !stty ixon
-inoremap jj <Esc>
+
 nnoremap <c-s> :w<CR>
 inoremap <c-s> <Esc>:w<CR>
 vnoremap <c-s> <Esc>:w<CR>
+inoremap jj <Esc>
 
 function! CPPSET()
   nnoremap <buffer> <F9> :w<cr>:!g++ % -O2 -o %< -std=c++14 -I ./<cr>:!clear;./%<<cr>
   nnoremap <buffer> <F8> :w<cr>:!g++ % -O2 -o %< -std=c++14 -I ./<cr>
   nnoremap <buffer> <F7> :w<cr>:!g++ *.cpp -O2 -o %< -std=c++14 -I ./<cr>:!clear;./%<<cr>
   nnoremap <buffer> <F6> :w<cr>:!g++ *.cpp -O2 -o %< -std=c++14 -I ./<cr>
+endfunction
+
+function! CSET()
+  nnoremap <buffer> <F9> :w<cr>:!gcc 
+
 endfunction
 
 function! JAVASET()
