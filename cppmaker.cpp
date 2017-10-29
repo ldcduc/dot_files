@@ -5,7 +5,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    ifstream fi("/home/ducle/format");
+    ifstream fi("/coding/code/format");
     string s(argv[1]);
     ofstream fo(s+".cpp");
     while (getline(fi,s)) 
