@@ -16,6 +16,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()
 
@@ -28,9 +30,9 @@ set number
 set showcmd
 set incsearch
 set hlsearch
-set bg=dark
 set bs=2
 set autoindent
+set nrformats=
 
 " Tab related stuffs
 set shiftwidth=4 " tab size = 4
@@ -41,6 +43,8 @@ set shiftround
 syntax on
 
 set mouse=a
+
+colorscheme vimbrant
 
 function! MyTabCompletion()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
@@ -70,7 +74,10 @@ autocmd VimLeave * silent !stty ixon
 nnoremap <c-s> :w<CR>
 inoremap <c-s> <Esc>:w<CR>
 vnoremap <c-s> <Esc>:w<CR>
-inoremap jj <Esc>
+inoremap jk <Esc>
+nnoremap <c-z> u
+nnoremap <c-y> <c-r>
+inoremap <c-z> <c-[>ui
 
 function! CPPSET()
   nnoremap <buffer> <F9> :w<cr>:!g++ % -O2 -o %< -std=c++14 -I ./<cr>:!clear;./%<<cr>
@@ -114,5 +121,7 @@ autocmd FileType html   call HTMLSET()
 "  Open/close NERDTree Tabs with \t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startu
-let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_console_startup = 0
+let g:NERDTreeWinPos = "right"
 let g:airline#extensions#tabline#enabled = 1
+let g:UltiSnipsExpandTrigger="<c-j>"
